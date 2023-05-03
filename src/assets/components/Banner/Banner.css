@@ -1,0 +1,11 @@
+
+.banner-image {
+  background-image: url("https://img.freepik.com/premium-photo/pizza-wooden-plate-black-stone-background-rollingpin-floor-cheese-pizza-with-tomato_459304-349.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-size: cover;
+  background-position-y: center;
+  background-color: rgb(31, 29, 29);
+  background-blend-mode: hard-light;
+  
+}
