@@ -9,10 +9,11 @@ import { Link } from 'react-router-dom';
 
 const Register = () => {
 
-    const { createUser } = useContext(AuthContext);
+    const { createUser, profileUpdateData, error, setError } = useContext(AuthContext);
 
     const handleRegister = (event) => {
         event.preventDefault();
+        setError('')
         const form = event.target;
         const name = form.name.value;
         const email = form.email.value;
@@ -23,9 +24,11 @@ const Register = () => {
         .then(result =>{
             const createdUser = result.user;
             console.log(createdUser)
+            profileUpdateData(createdUser, name, photoURL)
+            form.reset("")
         })
-        .cath(error =>{
-            console.error(error.message)
+        .catch(error =>{
+            setError(error.message)
         })
     }
 
@@ -47,22 +50,22 @@ const Register = () => {
 
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Email address</Form.Label>
-            <Form.Control type="email" name='email' placeholder="Enter email" />
+            <Form.Control required type="email" name='email' placeholder="Enter email" />
             <Form.Text className="text-muted"></Form.Text>
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="formBasicPassword">
             <Form.Label>Password</Form.Label>
-            <Form.Control type="password" name='password' placeholder="Password" />
+            <Form.Control required type="password" name='password' placeholder="Password" />
           </Form.Group>
-         
-          <Button variant="primary" type="submit">
-            Register
-          </Button>
-          <br />
           <Form.Text className="text-success">
           Already have an accouont? <Link to='/login'>Login</Link>
           </Form.Text>
+          <br />
+          <Button variant="primary" type="submit">
+            Register
+          </Button>
+          <p>{error}</p>         
         </Form>
       </Container>
         </div>

@@ -5,16 +5,16 @@ const Footer = () => {
         <div>
             <div>
             <footer className='my-5'>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-6">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-md-6">
                             <p>&copy; 2023 Example Company. All rights reserved.</p>
                         </div>
-                        <div class="col-md-6">
-                            <ul class="list-inline text-md-right">
-                                <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
-                                <li class="list-inline-item"><a href="#">Terms of Use</a></li>
-                                <li class="list-inline-item"><a href="#">Contact Us</a></li>
+                        <div className="col-md-6">
+                            <ul className="list-inline text-md-right">
+                                <li className="list-inline-item"><a href="#">Privacy Policy</a></li>
+                                <li className="list-inline-item"><a href="#">Terms of Use</a></li>
+                                <li className="list-inline-item"><a href="#">Contact Us</a></li>
                             </ul>
                         </div>
                     </div>

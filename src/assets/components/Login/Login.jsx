@@ -9,21 +9,21 @@ import { Link } from "react-router-dom";
 const githubProvider = new GithubAuthProvider();
 
 const Login = () => {
-  const { signIn, googleSignIn } = useContext(AuthContext);
+  const { signIn, googleSignIn,error,setError } = useContext(AuthContext);
 
   const handleLogin = (event) =>{
     event.preventDefault()
+    setError('')
     const form = event.target
     const password = form.password.value;
     const email = form.email.value;
     console.log(password,email)
     signIn(email,password)
     .then(result=>{
-        const loggedUser = result.user;
-        
+        const loggedUser = result.user; 
     })
-    .cath(error =>{
-        console.error(error.message)
+    .catch(error =>{
+        setError(error.message)
     })
   }
 
@@ -41,8 +41,7 @@ const Login = () => {
   const handleGithubLogin =()=>{
     googleSignIn(githubProvider)
     .then(result=>{
-        const loggedUser = result.user;
-        
+        const loggedUser = result.user;  
     })
     .cath(error =>{
         console.error(error.message)
@@ -63,14 +62,14 @@ const Login = () => {
             <Form.Label>Password</Form.Label>
             <Form.Control name="password" type="password" placeholder="Password" />
           </Form.Group>
-         
+         <Form.Text className="text-success">
+           Don't have an account? <Link to='/register'>Register</Link>
+          </Form.Text>
+          <br />
           <Button variant="primary" type="submit">
             Login
           </Button>
-          <br />
-          <Form.Text className="text-success">
-           Don't have an account? <Link to='/register'>Register</Link>
-          </Form.Text>
+          <p>{error}</p>
         </Form>
       </Container>
       <div className="w-25 mb-5 mt-1 mx-auto">

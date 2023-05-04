@@ -10,7 +10,7 @@ import Home from './assets/components/Home/Home.jsx';
 import Login from './assets/components/Login/Login.jsx';
 import Register from './assets/components/Register/Register.jsx';
 import AuthProvider from './Providers/AuthProvider';
-import Banner from './assets/components/Banner/Banner';
+import HomeMain from './assets/components/HomeMain/HomeMain';
 
 const router = createBrowserRouter([
   {
@@ -27,7 +27,7 @@ const router = createBrowserRouter([
       },
       {
         path : '/',
-        element: <Banner></Banner>
+        element: <HomeMain></HomeMain>
       }
     ]
   }
