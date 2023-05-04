@@ -17,8 +17,8 @@ const Register = () => {
         const name = form.name.value;
         const email = form.email.value;
         const password = form.password.value;
-        const photoUrl = form.photo.value;
-        console.log(name, email, password, photoUrl)
+        const photoURL = form.photo.value;
+        console.log(name, email, password, photoURL)
         createUser(email, password)
         .then(result =>{
             const createdUser = result.user;
@@ -40,7 +40,7 @@ const Register = () => {
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>PhotoUrl</Form.Label>
+            <Form.Label>photoURL</Form.Label>
             <Form.Control type="text" name='photo' placeholder="Enter photo url" />
             <Form.Text className="text-muted"></Form.Text>
           </Form.Group>
