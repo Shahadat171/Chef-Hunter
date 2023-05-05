@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { BsFillHandThumbsUpFill } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 const Chef = () => {
   const [chef, setChef] = useState([]);
@@ -36,16 +37,22 @@ const Chef = () => {
                     Experience : {everyChef.yearsOfExperience}y
                   </h5>
                   <h6 className="card-title ">
-                    {" "}
                     <BsFillHandThumbsUpFill className="text-white-50">
-                      {" "}
-                    </BsFillHandThumbsUpFill>{" "}
+                    </BsFillHandThumbsUpFill>
                     Like : {everyChef.likes}
                   </h6>
                 </div>
               </div>
               <div class="card-footer px-0 mx-0 py-0 my-0">
-              <button type="button" style={{width : '100%'}} className="btn btn-secondary btn-lg ">View Recipes </button>
+              <Link to={`/${everyChef.id}`}>
+                <button
+                  type="button"
+                  style={{ width: "100%" }}
+                  className="btn btn-secondary btn-lg "
+                >
+                  View Recipes
+                </button>
+                </Link>
               </div>
             </div>
           </div>

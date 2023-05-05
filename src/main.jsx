@@ -11,6 +11,7 @@ import Login from './assets/components/Login/Login.jsx';
 import Register from './assets/components/Register/Register.jsx';
 import AuthProvider from './Providers/AuthProvider';
 import HomeMain from './assets/components/HomeMain/HomeMain';
+import EveryChef from './assets/components/EveryChef/EveryChef';
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,11 @@ const router = createBrowserRouter([
       {
         path : '/',
         element: <HomeMain></HomeMain>
+      },
+      {
+        path: '/:id',
+        element : <EveryChef></EveryChef>,
+        loader : ({params}) => fetch(`http://localhost:5000/Chef/${params.id}`)
       }
     ]
   }
