@@ -14,6 +14,7 @@ import HomeMain from './assets/components/HomeMain/HomeMain';
 import EveryChef from './assets/components/EveryChef/EveryChef';
 import PageNotFound from './assets/components/PageNotFound/PageNotFound';
 import PrivatesRoute from './assets/components/Routes/PrivatesRoute';
+import Blog from './assets/components/Blog/Blog';
 
 const router = createBrowserRouter([
   {
@@ -35,12 +36,16 @@ const router = createBrowserRouter([
       {
         path: '/chef/:id',
         element : <PrivatesRoute> <EveryChef></EveryChef></PrivatesRoute>,
-        loader : ({params}) => fetch(`http://localhost:5000/Chef/${params.id}`)
+        loader : ({params}) => fetch(`https://assignment-10-server-teal-nine.vercel.app/Chef/${params.id}`)
+      },
+      {
+        path: "/blog",
+        element: <Blog></Blog>
       },
       {
         path: "*",
         element: <PageNotFound></PageNotFound>
-      }
+      },
     ],
     
      

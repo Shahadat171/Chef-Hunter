@@ -5,7 +5,7 @@ import { FaLocationArrow } from "react-icons/fa";
 const OtherBranch = () => {
     const [ shops, setShops ] = useState([])
     useEffect(()=>{
-        fetch("http://localhost:5000/shop")
+        fetch("https://assignment-10-server-teal-nine.vercel.app/shop")
         .then(res => res.json())
         .then(data => setShops(data))
     },[])

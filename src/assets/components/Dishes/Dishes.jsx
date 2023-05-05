@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 const Dishes = () => {
     const [dishes , setDishes] = useState([]) 
     useEffect(()=>{
-        fetch('http://localhost:5000/dishes')
+        fetch('https://assignment-10-server-teal-nine.vercel.app/dishes')
         .then(res => res.json())
         .then(data=> setDishes(data))
     },[])
