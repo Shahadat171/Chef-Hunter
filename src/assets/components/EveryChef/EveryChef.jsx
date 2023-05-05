@@ -56,6 +56,9 @@ const EveryChef = () => {
               <div>
                 <h6 className="text-center">Ingredients:</h6>
                 <li className="text-center" style={{ listStyleType: "none" }}>
+                  {recipe1.ingredients[0]}
+                </li>
+                <li className="text-center" style={{ listStyleType: "none" }}>
                   {recipe1.ingredients[1]}
                 </li>
                 <li className="text-center" style={{ listStyleType: "none" }}>
@@ -66,9 +69,6 @@ const EveryChef = () => {
                 </li>
                 <li className="text-center" style={{ listStyleType: "none" }}>
                   {recipe1.ingredients[4]}
-                </li>
-                <li className="text-center" style={{ listStyleType: "none" }}>
-                  {recipe1.ingredients[5]}
                 </li>
               </div>
               <h6>How to cook?</h6>
@@ -85,7 +85,7 @@ const EveryChef = () => {
               <div>
                 <h6 className="text-center">Ingredients:</h6>
                 <li className="text-center" style={{ listStyleType: "none" }}>
-                  {recipe2.ingredients[1]}
+                  {recipe2.ingredients[0]}
                 </li>
                 <li className="text-center" style={{ listStyleType: "none" }}>
                   {recipe2.ingredients[1]}
@@ -115,7 +115,7 @@ const EveryChef = () => {
               <div>
                 <h6 className="text-center">Ingredients:</h6>
                 <li className="text-center" style={{ listStyleType: "none" }}>
-                  {recipe3.ingredients[1]}
+                  {recipe3.ingredients[0]}
                 </li>
                 <li className="text-center" style={{ listStyleType: "none" }}>
                   {recipe3.ingredients[1]}

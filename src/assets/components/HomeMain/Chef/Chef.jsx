@@ -10,6 +10,7 @@ const Chef = () => {
       .then((res) => res.json())
       .then((data) => setChef(data));
   }, []);
+  console.log(chef)
   return (
     <div className=" w-75 mx-auto mt-5 pt-5">
       <h3 className="mb-2 text-center">

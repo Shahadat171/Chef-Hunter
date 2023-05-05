@@ -13,6 +13,7 @@ import AuthProvider from './Providers/AuthProvider';
 import HomeMain from './assets/components/HomeMain/HomeMain';
 import EveryChef from './assets/components/EveryChef/EveryChef';
 import PageNotFound from './assets/components/PageNotFound/PageNotFound';
+import PrivatesRoute from './assets/components/Routes/PrivatesRoute';
 
 const router = createBrowserRouter([
   {
@@ -31,10 +32,9 @@ const router = createBrowserRouter([
         path: '/register',
         element: <Register></Register>
       },
-      
       {
         path: '/chef/:id',
-        element : <EveryChef></EveryChef>,
+        element : <PrivatesRoute> <EveryChef></EveryChef></PrivatesRoute>,
         loader : ({params}) => fetch(`http://localhost:5000/Chef/${params.id}`)
       },
       {
