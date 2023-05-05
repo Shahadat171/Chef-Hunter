@@ -44,7 +44,7 @@ const Chef = () => {
                 </div>
               </div>
               <div class="card-footer px-0 mx-0 py-0 my-0">
-              <Link to={`/${everyChef.id}`}>
+              <Link to={`/chef/${everyChef.id}`}>
                 <button
                   type="button"
                   style={{ width: "100%" }}
