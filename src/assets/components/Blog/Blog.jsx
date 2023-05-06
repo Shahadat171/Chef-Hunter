@@ -3,6 +3,7 @@ import React from "react";
 const Blog = () => {
   return (
     <div className="w-50 mx-auto mt-5">
+        <button className="btn btn-primary">Dwonload</button>
       <div>
         <p>
           1.What is the differences between uncontrolled and controlled

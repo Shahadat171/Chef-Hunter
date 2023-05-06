@@ -10,13 +10,13 @@ const Chef = () => {
       .then((res) => res.json())
       .then((data) => setChef(data));
   }, []);
-  console.log(chef)
   return (
     <div className=" w-75 mx-auto mt-5 pt-5">
       <h3 className="mb-2 text-center">
         Choose dishes and recipes from our Master Chefs
       </h3>
       <hr className="mb-4" />
+      <div>
       <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-5">
         {chef.map((everyChef) => (
           <div className="col bg-white shadow-lg p-3 rounded">
@@ -58,6 +58,7 @@ const Chef = () => {
             </div>
           </div>
         ))}
+      </div>
       </div>
     </div>
   );
