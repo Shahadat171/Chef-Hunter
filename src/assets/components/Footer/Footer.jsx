@@ -4,12 +4,12 @@ import './Footer.css'
 
 const Footer = () => {
   return (
-    <div className="bg-dark text-light px-5 py-5 mobile-main mt-5">
+    <div className="bg-dark text-light  pe-1 py-5 mt-5">
       <div className="d-flex justify-content-between">
-        <div className=" mx-5">
+        <div className="mx-5">
           <h4>Rajmohol Restora</h4>
         </div>
-        <div className=" mx-5">
+        <div className="mx-5">
           <FaFacebook className="me-2" style={{ width: "50px", height: "35px" }}></FaFacebook>
           <FaTwitter className="me-2" style={{ width: "50px", height: "35px" }}></FaTwitter>
           <FaInstagram style={{ width: "50px", height: "35px" }}></FaInstagram>
