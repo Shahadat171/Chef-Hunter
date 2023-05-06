@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Spinner } from 'react-bootstrap';
 
 const Dishes = () => {
     const [dishes , setDishes] = useState([]) 
@@ -7,6 +8,13 @@ const Dishes = () => {
         .then(res => res.json())
         .then(data=> setDishes(data))
     },[])
+    if(!dishes.length){
+        return <>
+        <div className="text-center">
+        <Spinner size={50} thickness={100} speed={100} color="#36ad47" secondaryColor="rgba(0, 0, 0, 0.44)" />
+        </div>
+        </>
+    }
     return (
         <div className='my-5'>
             <h2 className='text-center pt-5' >Try some of our <br /> extraordinary dishses</h2>

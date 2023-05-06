@@ -14,19 +14,34 @@ const AuthProvider = ( {children} ) => {
     const [ error, setError] = useState('')
 
     const googleSignIn = () =>{
+        setLoading(true);
         return signInWithPopup(auth, googleProvider)
     }
 
     const createUser = (email, password) =>{
+        setLoading(true);
         return createUserWithEmailAndPassword(auth, email, password)
     }
 
     const signIn = (email,password) =>{
+        setLoading(true);
         return signInWithEmailAndPassword(auth,email,password)
     }
 
     const logOut = () =>{
         return signOut(auth);
+
+    }
+    const profileUpdateData = (user, regName, photo)=> {
+        return updateProfile(auth.currentUser, {
+            displayName: regName, photoURL: photo
+          }).then(() => {
+            // Profile updated!
+            // ...
+          }).catch((error) => {
+            // An error occurred
+            // ...
+          });
     }
 
     useEffect(() =>{
@@ -40,23 +55,13 @@ const AuthProvider = ( {children} ) => {
         }
     } ,[])
     
-    const profileUpdateData = (user, regName, photo)=> {
-        return updateProfile(auth.currentUser, {
-            displayName: regName, photoURL: photo
-          }).then(() => {
-            // Profile updated!
-            // ...
-          }).catch((error) => {
-            // An error occurred
-            // ...
-          });
-    }
-
+    
     const authInfo = {
          error,
          setError,
          profileUpdateData,
          loading,
+         setLoading,
          googleSignIn,
          createUser,
          signIn,

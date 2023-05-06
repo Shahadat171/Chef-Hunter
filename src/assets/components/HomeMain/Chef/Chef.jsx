@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Spinner } from "react-bootstrap";
 import { BsFillHandThumbsUpFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
@@ -10,6 +11,13 @@ const Chef = () => {
       .then((res) => res.json())
       .then((data) => setChef(data));
   }, []);
+  if(!chef.length){
+    return <> 
+    <div className="text-center">
+    <Spinner size={50} thickness={100} speed={100} color="#36ad47" secondaryColor="rgba(0, 0, 0, 0.44)" />
+    </div>
+  </>
+  }
   return (
     <div className=" w-75 mx-auto mt-5 pt-5">
       <h3 className="mb-2 text-center">
