@@ -9,6 +9,7 @@ import Dishes from '../Dishes/Dishes';
 const HomeMain = () => {
     return (
         <div>
+            {/* className='bg-[#FAF8F9]' */}
            <Banner></Banner>
            <Chef></Chef>
            <OtherBranch></OtherBranch>
