@@ -6,12 +6,11 @@ import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
 import { GoThumbsup } from "react-icons/go";
 
-
 const Chef = () => {
   const [chef, setChef] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/Chef")
+    fetch("https://assignment-10-server-teal-nine.vercel.app/Chef")
       .then((res) => res.json())
       .then((data) => setChef(data));
   }, []);
@@ -44,10 +43,19 @@ const Chef = () => {
           {chef.map((everyChef) => (
             <div className="card w-[400px] font-serif bg-base-100 shadow-xl">
               <figure>
-                <img src={everyChef.chefPicture} className="h-80 w-full" alt="Shoes" />
+                <img
+                  src={everyChef.chefPicture}
+                  className="h-80 w-full"
+                  alt="Shoes"
+                />
               </figure>
               <div className="card-body flex flex-col items-center justify-center">
-              <Rating className="h-6" style={{ maxWidth: 140 }} value={3} readOnly />
+                <Rating
+                  className="h-6"
+                  style={{ maxWidth: 140 }}
+                  value={3}
+                  readOnly
+                />
                 <h1 className="card-title mb-1">{everyChef.chefName}</h1>
                 {/* <Rating count="3" color="yellow" className="my-rating-component"></Rating> */}
                 <div className="flex gap-x-4 text-[17px] mb-2 mt-0 pt-0 items-center justify-between">
@@ -59,9 +67,10 @@ const Chef = () => {
                     </span>
                   </h2>
                   {/* BsFillHandThumbsU */}
-                  
+
                   <h2 className="flex items-center justify-center">
-                  <GoThumbsup className="mr-1 text-[#192a56]"></GoThumbsup> : <span className="font-mono ml-1">{everyChef.likes}</span>
+                    <GoThumbsup className="mr-1 text-[#192a56]"></GoThumbsup> :{" "}
+                    <span className="font-mono ml-1">{everyChef.likes}</span>
                   </h2>
                   <h2>
                     Experience :{" "}
@@ -74,7 +83,9 @@ const Chef = () => {
                 <div className="flex gap-x-14 items-center justify-between">
                   <div className="card-actions justify-end">
                     <Link to={`/chef/${everyChef.id}`}>
-                      <button className="btn btn-primary bg-[#192a56] normal-case tracking-wider">View Recipes</button>
+                      <button className="btn btn-primary bg-[#192a56] normal-case tracking-wider">
+                        View Recipes
+                      </button>
                     </Link>
                   </div>
                 </div>

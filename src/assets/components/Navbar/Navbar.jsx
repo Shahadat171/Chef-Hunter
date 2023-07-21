@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../Providers/AuthProvider";
 import Tooltip from "@mui/material/Tooltip";
+import logo from "../../logo.png"
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -20,7 +21,7 @@ const Navbar = () => {
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto">
           <a href="https://flowbite.com/" className="flex items-center">
             <img
-              src="https://flowbite.com/docs/images/logo.svg"
+              src={logo}
               className="h-8 mr-3"
               alt="Flowbite Logo"
             />
@@ -31,6 +32,7 @@ const Navbar = () => {
           <div className="flex md:order-2">
           {user && (
                 <div>
+                  
                     <Tooltip title={user.displayName}>
                   <span>
                     <img className="rounded-circle w-10 mr-5 p-[2px]" src={user.photoURL} />

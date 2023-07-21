@@ -39,7 +39,9 @@ const router = createBrowserRouter([
           </PrivatesRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/Chef/${params.id}`),
+          fetch(
+            `https://assignment-10-server-teal-nine.vercel.app/Chef/${params.id}`
+          ),
       },
       {
         path: "/blog",

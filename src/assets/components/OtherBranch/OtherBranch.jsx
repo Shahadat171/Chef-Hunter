@@ -1,33 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { Spinner } from "react-bootstrap";
-import { FaDollarSign,FaHeadset } from "react-icons/fa";
+import { FaDollarSign, FaHeadset } from "react-icons/fa";
 import aboutImage from "../../about.jpg";
 import aboutImage2 from "../../about-removebg.png";
 import aboutImage3 from "../../sandwitch.png";
-import delivey from "../../icon/delivery2.png"
+import delivey from "../../icon/delivery2.png";
 
 const OtherBranch = () => {
   const [shops, setShops] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/shop")
+    fetch("https://assignment-10-server-teal-nine.vercel.app/shop")
       .then((res) => res.json())
       .then((data) => setShops(data));
   }, []);
-  if (!shops.length) {
-    return (
-      <>
-        <div className="text-center">
-          <Spinner
-            size={50}
-            thickness={100}
-            speed={100}
-            color="#36ad47"
-            secondaryColor="rgba(0, 0, 0, 0.44)"
-          />
-        </div>
-      </>
-    );
-  }
+
   return (
     <div className="flex gap-x-16 items-center justify-center mt-16 h-[100vh]">
       <div className="w-1/2">
@@ -38,7 +24,9 @@ const OtherBranch = () => {
         <i>Expert chefs</i>
       </h2> */}
         <h3 className="text-4xl tracking-wide text-left font-extrabold font-serif mb-7">
-          <span className=" "><span className="text-green-600">About</span> Us</span>
+          <span className=" ">
+            <span className="text-green-600">About</span> Us
+          </span>
         </h3>
         <h1 className="text-2xl tracking-wide font-extrabold font-serif mb-7">
           Why Choose us?
@@ -52,11 +40,21 @@ const OtherBranch = () => {
           and savor the distinctive taste of Bengal.
         </p>
         <div className="flex gap-x-5 mb-2 mt-3 font-sans ">
-           <div className="btn rounded mt-2  flex items-center justify-center  border-2 shadow-sm"><img src={delivey} className="h-7" />Free Delivery</div>
-           <div className="btn rounded mt-2"><FaDollarSign className="h-7 text-green-600"/> Easy Payments</div>
-           <div className="btn rounded mt-2"><FaHeadset className="h-8 w-6 text-green-600"/>24/7 Service</div>
+          <div className="btn rounded mt-2  flex items-center justify-center  border-2 shadow-sm">
+            <img src={delivey} className="h-7" />
+            Free Delivery
+          </div>
+          <div className="btn rounded mt-2">
+            <FaDollarSign className="h-7 text-green-600" /> Easy Payments
+          </div>
+          <div className="btn rounded mt-2">
+            <FaHeadset className="h-8 w-6 text-green-600" />
+            24/7 Service
+          </div>
         </div>
-        <button className="btn mt-3 font-sans btn-primary bg-[#192a56] tracking-wider normal-case">Order Now</button>
+        <button className="btn mt-3 font-sans btn-primary bg-[#192a56] tracking-wider normal-case">
+          Order Now
+        </button>
       </div>
     </div>
     // <div>
