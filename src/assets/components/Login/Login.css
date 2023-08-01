@@ -29,12 +29,11 @@
     letter-spacing: 0.2px;
     font-family: "Roboto";
   }
-  &:hover {
+  .btn-text:hover {
     box-shadow: 0 0 6px #4285f4;
   }
-  &:active {
+  .btn-text:active {
     background: #1669F2;
   }
 }
-
 @import url(https://fonts.googleapis.com/css?family=Roboto:500);

@@ -39,7 +39,7 @@ const EveryChef = () => {
               <h2 className="card-title font-serif text-3xl text-[#192a56]">
                 {chefName}
               </h2>
-              {/*https://assignment-10-server-teal-nine.vercel.app */}
+              {/* https://assignment-10-server-teal-nine.vercel.app */}
               {/* http://localhost:5000 */}
               <Rating
                 className="h-6"
